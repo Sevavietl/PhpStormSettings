@@ -1,0 +1,135 @@
+<templateSet group="Custom">
+  <template name="anoc" value="new class ($PARAMETERS$) {&#10;    $END$&#10;}" description="anonymous class" toReformat="false" toShortenFQNames="true">
+    <variable name="PARAMETERS" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Expression" value="true" />
+    </context>
+  </template>
+  <template name="anof" value="static function ($PARAMETERS$): $RETURN_TYPE$ {&#10;    $END$&#10;}" description="anonymous function" toReformat="false" toShortenFQNames="true">
+    <variable name="PARAMETERS" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="RETURN_TYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Expression" value="true" />
+    </context>
+  </template>
+  <template name="anofu" value="static function ($PARAMETERS$) use ($VARIABLES$): $RETURN_TYPE$ {&#10;    $END$&#10;}" description="anonymous function with use (closure)" toReformat="false" toShortenFQNames="true">
+    <variable name="PARAMETERS" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VARIABLES" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="RETURN_TYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Expression" value="true" />
+    </context>
+  </template>
+  <template name="prip" value="/** @var $TYPE$ */&#10;private $$$PROPERTY$;" description="private property" toReformat="false" toShortenFQNames="true">
+    <variable name="TYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="PROPERTY" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Class Member" value="true" />
+    </context>
+  </template>
+  <template name="prop" value="/** @var $TYPE$ */&#10;protected $$$PROPERTY$;" description="protected property" toReformat="false" toShortenFQNames="true">
+    <variable name="TYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="PROPERTY" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Class Member" value="true" />
+    </context>
+  </template>
+  <template name="arm" value="array_map(static function ($ELEMENT$): $RETURN_TYPE$ {&#10;    $END$&#10;}, $ARRAY$);" description="array_map" toReformat="false" toShortenFQNames="true">
+    <variable name="ELEMENT" expression="" defaultValue="&quot;$item&quot;" alwaysStopAt="true" />
+    <variable name="RETURN_TYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ARRAY" expression="" defaultValue="&quot;$array&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Expression" value="true" />
+    </context>
+  </template>
+  <template name="arr" value="array_reduce($ARRAY$, static function ($CARRY$, $ELEMENT$): $RETURN_TYPE$ {&#10;    $END$&#10;    return $CARRY$;&#10;}, $INITIAL$);" description="array_reduce" toReformat="false" toShortenFQNames="true">
+    <variable name="ARRAY" expression="" defaultValue="&quot;$array&quot;" alwaysStopAt="true" />
+    <variable name="CARRY" expression="" defaultValue="&quot;$carry&quot;" alwaysStopAt="true" />
+    <variable name="ELEMENT" expression="" defaultValue="&quot;$item&quot;" alwaysStopAt="true" />
+    <variable name="RETURN_TYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="INITIAL" expression="" defaultValue="&quot;[]&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Expression" value="true" />
+    </context>
+  </template>
+  <template name="arf" value="array_filter($ARRAY$, static function ($ELEMENT$): $RETURN_TYPE$ {&#10;    $END$&#10;});" description="array_filter" toReformat="false" toShortenFQNames="true">
+    <variable name="ARRAY" expression="" defaultValue="&quot;$array&quot;" alwaysStopAt="true" />
+    <variable name="ELEMENT" expression="" defaultValue="&quot;$item&quot;" alwaysStopAt="true" />
+    <variable name="RETURN_TYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Expression" value="true" />
+    </context>
+  </template>
+  <template name="arfu" value="array_filter($ARRAY$, static function ($ELEMENT$) use ($VARIABLES$): $RETURN_TYPE$ {&#10;    $END$&#10;});" description="array_filter with use (closure)" toReformat="false" toShortenFQNames="true">
+    <variable name="ARRAY" expression="" defaultValue="&quot;$array&quot;" alwaysStopAt="true" />
+    <variable name="ELEMENT" expression="" defaultValue="&quot;$item&quot;" alwaysStopAt="true" />
+    <variable name="VARIABLES" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="RETURN_TYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Expression" value="true" />
+    </context>
+  </template>
+  <template name="armu" value="array_map(static function ($ELEMENT$) use ($VARIABLES$): $RETURN_TYPE$ {&#10;    $END$&#10;}, $ARRAY$);" description="array_map with use (closure)" toReformat="false" toShortenFQNames="true">
+    <variable name="ELEMENT" expression="" defaultValue="&quot;$item&quot;" alwaysStopAt="true" />
+    <variable name="VARIABLES" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="RETURN_TYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ARRAY" expression="" defaultValue="&quot;$array&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Expression" value="true" />
+    </context>
+  </template>
+  <template name="arru" value="array_reduce($ARRAY$, static function ($CARRY$, $ELEMENT$) use ($VARIABLES$): $RETURN_TYPE$ {&#10;    $END$&#10;    return $CARRY$;&#10;}, $INITIAL$);" description="array_reduce with use (closure)" toReformat="false" toShortenFQNames="true">
+    <variable name="ARRAY" expression="" defaultValue="&quot;$array&quot;" alwaysStopAt="true" />
+    <variable name="CARRY" expression="" defaultValue="&quot;$carry&quot;" alwaysStopAt="true" />
+    <variable name="ELEMENT" expression="" defaultValue="&quot;$item&quot;" alwaysStopAt="true" />
+    <variable name="VARIABLES" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="RETURN_TYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="INITIAL" expression="" defaultValue="&quot;[]&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Expression" value="true" />
+    </context>
+  </template>
+  <template name="im" value="public function $NAME$($PARAMETERS$): $RETURN_TYPE$;" description="interface method" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="PARAMETERS" expression="phpVar" defaultValue="" alwaysStopAt="true" />
+    <variable name="RETURN_TYPE" expression="" defaultValue="&quot;void&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Class Member" value="true" />
+    </context>
+  </template>
+  <template name="test" value="/** @test */&#10;public function it_$NAME$(): void&#10;{&#10;    $END$&#10;}" description="Snake case named unit test method" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Class Member" value="true" />
+    </context>
+  </template>
+  <template name="lget" value="public function $PROPERTY$(): $RETURN_TYPE$&#10;{&#10;    if (null === $this-&gt;$PROPERTY$) {&#10;        $this-&gt;$PROPERTY$ = $END$;&#10;    }&#10;    &#10;    return $this-&gt;$PROPERTY$;&#10;}" description="Lazy getter" toReformat="false" toShortenFQNames="true">
+    <variable name="PROPERTY" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="RETURN_TYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Class Member" value="true" />
+    </context>
+  </template>
+  <template name="anoci" value="new class ($PARAMETERS$) implements $INTERFACES$ {&#10;    $END$&#10;}" description="anonymous class implements" toReformat="false" toShortenFQNames="true">
+    <variable name="PARAMETERS" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="INTERFACES" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Expression" value="true" />
+    </context>
+  </template>
+  <template name="anoce" value="new class ($PARAMETERS$) extends $CLASS$ {&#10;    $END$&#10;}" description="anonymous class extends" toReformat="false" toShortenFQNames="true">
+    <variable name="PARAMETERS" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="CLASS" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Expression" value="true" />
+    </context>
+  </template>
+  <template name="anocei" value="new class ($PARAMETERS$) extends $CLASS$ implements $INTERFACES$ {&#10;    $END$&#10;}" description="anonymous class extends and implements" toReformat="false" toShortenFQNames="true">
+    <variable name="PARAMETERS" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="CLASS" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="INTERFACES" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Expression" value="true" />
+    </context>
+  </template>
+</templateSet>
